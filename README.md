@@ -64,3 +64,67 @@ Corre los casos de prueba:
 ```
 npm run test
 ```
+
+## EndPoints
+Dentro de laaplicaciónse encuentran los siguientes endPoints:
+
+```
+type: GET
+URL: http://localhost:8010/api/
+Authorization: none
+```
+
+```
+type: POST
+URL: http://localhost:8010/api/users/register
+Authorization: none
+Body: {
+        "firstName": "Pepito",
+          "lastName": "Perez",
+          "email": "pepito.perez@hotmail.com",
+          "password": "pepito.perez",
+          "birthDate": "2018/05/02"
+      }
+```
+
+
+```
+type: POST
+URL: http://localhost:8010/api/authenticate
+Authorization: none
+Body: {
+          "email": "pepito.perez@hotmail.com",
+          "password": "pepito.perez"
+      }
+      
+Result: {
+    "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFuLnZlbGFzcXVlekBob3RtYWlsLmNvbSIsImlhdCI6MTU2Mzc0ODgxMywiZXhwIjoxNTYzODM1MjEzfQ.J9R4DtuVjcpFH4VvKFF_S7cIlIfIIQCs-aqGBuvBeXA",
+    "user": {
+        "id": 1,
+        "email": "pepito.perez@hotmail.com",
+        "firstName": "Pepito",
+        "lastName": "Perez"
+    }
+}
+```
+
+```
+type: GET
+URL: http://localhost:8010/api/weather/bogota
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFuLnZlbGFzcXVlekBob3RtYWlsLmNvbSIsImlhdCI6MTU2Mzc0NjQyNywiZXhwIjoxNTYzODMyODI3fQ.TThKT273HZeUDKjmVL-ey_MVybYnQLPjOCic3ePvLZY
+Content-Type: application/json
+```
+
+```
+type: GET
+URL: http://localhost:8010/api/population/bogota
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFuLnZlbGFzcXVlekBob3RtYWlsLmNvbSIsImlhdCI6MTU2Mzc0NjQyNywiZXhwIjoxNTYzODMyODI3fQ.TThKT273HZeUDKjmVL-ey_MVybYnQLPjOCic3ePvLZY
+Content-Type: application/json
+```
+
+```
+type: GET
+URL: http://localhost:8010/api/users/1/queries
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFuLnZlbGFzcXVlekBob3RtYWlsLmNvbSIsImlhdCI6MTU2Mzc0NjQyNywiZXhwIjoxNTYzODMyODI3fQ.TThKT273HZeUDKjmVL-ey_MVybYnQLPjOCic3ePvLZY
+Content-Type: application/json
+```
