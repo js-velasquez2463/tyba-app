@@ -1,0 +1,30 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:10-alpine
+    container_name: postgres
+    ports:
+      - '25432:5432'
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=zyX1Jw31pOT5OFDUqYgNR93b
+      - POSTGRES_DB=database
+  tyba-app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: 'tyba/test'
+    container_name: test
+    ports:
+      - 8010:8010
+    environment:
+      - PSQL_URL=postgres://admin:zyX1Jw31pOT5OFDUqYgNR93b@postgres:5432/database?sslmode=disable
+      - WEATHER_API_KEY=b12fd9888a8e24cc68edd509627c2f5b
+      - WEATHER_API_URL=https://api.openweathermap.org/data/2.5/weather
+      - POPULATION_API_URL=https://public.opendatasoft.com/api/records/1.0/search
+      - ENV=${ENV}
+    volumes:
+      - .:/var/www/
+    command: ./scripts/run.sh
+    depends_on:
+      - postgres
