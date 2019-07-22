@@ -6,7 +6,7 @@ Este proyecto contiene el backend de una aplicación API REST hecho en Node JS.
 
 ## Instalación
 Realice un Fork de este repositorio y realize un clone en su máquina. 
-Esta aplicación se puededesplegar de dos maneras: 
+Esta aplicación se puede desplegar de dos maneras: 
 - Utilizando DockerCompose
 - Despliegue local en la máquina.
 
@@ -16,7 +16,7 @@ Instale docker compose. Luego corra el comando a continuación:
 sudo docker-compose -f docker-compose-run.yml up
 ```
 Esto despliega una base de datos PostgreSQL interna y se conecta con la aplicación que se despliega localmente sobre el puerto 8010.
-Para observar la correcta instalación se puede haer una peticíon get a la dirección:
+Para observar la correcta instalación se puede hacer una peticíon get a la dirección:
 ```
 http://localhost:8010/api/
 ```
