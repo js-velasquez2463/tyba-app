@@ -22,7 +22,7 @@
     "node-excel-export": "^1.4.4",
     "node-fetch": "^2.6.0",
     "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0",
+    "passport-jwt": "^4.0.1",
     "pg": "^7.9.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^5.2.12"
